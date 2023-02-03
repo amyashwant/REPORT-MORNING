@@ -6,8 +6,8 @@ const Navbar =()=>{
       <div>
         <nav className="navbar fixed-top navbar-expand-lg bg-dark">
           <div className="container-fluid">
-            <Link className="navbar-brand" to="/Newsmonkey">
-              Newsmonkey
+            <Link className="navbar-brand" to="/">
+            ReportMorning
             </Link>
             <button
               className="navbar-toggler"
@@ -29,16 +29,12 @@ const Navbar =()=>{
                   <Link
                     className="nav-link"
                     aria-current="page"
-                    to="/Home"
+                    to="/"
                   >
                     Home
                   </Link>
                 </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/about">
-                    About
-                  </Link>
-                </li>
+               
                 <li className="nav-item">
                   <Link className="nav-link" to="/business">
                     business
