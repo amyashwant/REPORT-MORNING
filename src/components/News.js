@@ -22,13 +22,15 @@ const News = (props) => {
 
   const updateNews = async () => {
     console.log(props.apiKey);
-    let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page}&pageSize=${props.pageSize}`;
+    let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=f6c5f0403f4e48c88becd9835f5a8103&page=${page}&pageSize=${props.pageSize}`;
     setLoading(true);
     props.setProgress(10);
     let data = await fetch(url);
     let parseddata = await data?.json();
+
     props.setProgress(50);
     setArticles(parseddata?.articles);
+    console.log(parseddata.articles);
     setLoading(false);
     settotalResults(parseddata?.totalResults);
 
