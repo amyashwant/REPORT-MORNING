@@ -26,11 +26,11 @@ const News = (props) => {
     setLoading(true);
     props.setProgress(10);
     let data = await fetch(url);
-    let parseddata = await data.json();
+    let parseddata = await data?.json();
     props.setProgress(50);
-    setArticles(parseddata.articles);
+    setArticles(parseddata?.articles);
     setLoading(false);
-    settotalResults(parseddata.totalResults);
+    settotalResults(parseddata?.totalResults);
 
     props.setProgress(100);
   };
@@ -79,7 +79,7 @@ const News = (props) => {
       <InfiniteScroll
         dataLength={articles?.length}
         next={fetchMoreData}
-        hasMore={articles.length !== totalResults}
+        hasMore={articles?.length !== totalResults}
         loader={
           <div className="text-center">
             {" "}
